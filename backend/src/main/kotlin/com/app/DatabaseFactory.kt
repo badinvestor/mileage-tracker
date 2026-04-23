@@ -12,9 +12,12 @@ import java.io.File
 object DatabaseFactory {
     fun init() {
         File("data").mkdirs()
-        Database.connect("jdbc:sqlite:data/app.db", driver = "org.sqlite.JDBC")
+        Database.connect(
+            url = "jdbc:sqlite:data/app.db",
+            driver = "org.sqlite.JDBC",
+            setupConnection = { it.createStatement().execute("PRAGMA foreign_keys = ON") }
+        )
         transaction {
-            exec("PRAGMA foreign_keys = ON")
             SchemaUtils.createMissingTablesAndColumns(Vehicles, Trips)
             seedVehicles()
             seedTrips()
