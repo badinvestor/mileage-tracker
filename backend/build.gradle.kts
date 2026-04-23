@@ -30,4 +30,8 @@ dependencies {
     implementation("org.jetbrains.exposed:exposed-jdbc:0.55.0")
     implementation("org.xerial:sqlite-jdbc:3.47.1.0")
     implementation("ch.qos.logback:logback-classic:1.5.12")
+
+    testImplementation("io.ktor:ktor-server-test-host:2.3.12")
+    testImplementation("io.ktor:ktor-client-content-negotiation:2.3.12")
+    testImplementation("org.jetbrains.kotlin:kotlin-test-junit:1.9.25")
 }
