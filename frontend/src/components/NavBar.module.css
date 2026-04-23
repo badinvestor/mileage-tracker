@@ -33,3 +33,19 @@
   color: #5bc8f5 !important;
   border-bottom: 2px solid #5bc8f5;
 }
+
+.logout {
+  background: none;
+  border: 1px solid #93b4d4;
+  color: #93b4d4;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.logout:hover {
+  color: #f0f4f8;
+  border-color: #f0f4f8;
+}

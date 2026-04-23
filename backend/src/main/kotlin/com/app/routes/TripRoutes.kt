@@ -5,9 +5,9 @@ import com.app.models.Trip
 import com.app.models.Trips
 import com.app.models.Vehicles
 import io.ktor.http.*
-import io.ktor.server.application.*
 import io.ktor.server.request.*
 import io.ktor.server.response.*
+import io.ktor.server.application.*
 import io.ktor.server.routing.*
 import kotlinx.serialization.Serializable
 import org.jetbrains.exposed.sql.*
@@ -20,9 +20,8 @@ data class VehicleMiles(val vehicleId: Int, val vehicleName: String, val miles: 
 @Serializable
 data class SummaryResponse(val month: String, val totalMiles: Double, val byVehicle: List<VehicleMiles>)
 
-fun Application.tripRoutes() {
-    routing {
-        route("/api/trips") {
+fun Route.tripRoutes() {
+    route("/api/trips") {
 
             // GET /api/trips
             get {
@@ -214,10 +213,10 @@ fun Application.tripRoutes() {
                     call.respond(HttpStatusCode.InternalServerError, ErrorResponse(e.message ?: "Unexpected error"))
                 }
             }
-        }
+    }
 
-        // GET /api/summary?month=YYYY-MM
-        get("/api/summary") {
+    // GET /api/summary?month=YYYY-MM
+    get("/api/summary") {
             try {
                 val month = call.request.queryParameters["month"]
                     ?: return@get call.respond(HttpStatusCode.BadRequest, ErrorResponse("month query parameter is required (YYYY-MM)"))
@@ -250,4 +249,3 @@ fun Application.tripRoutes() {
             }
         }
     }
-}
