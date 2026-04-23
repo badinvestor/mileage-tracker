@@ -14,6 +14,7 @@ object DatabaseFactory {
         File("data").mkdirs()
         Database.connect("jdbc:sqlite:data/app.db", driver = "org.sqlite.JDBC")
         transaction {
+            exec("PRAGMA foreign_keys = ON")
             SchemaUtils.createMissingTablesAndColumns(Vehicles, Trips)
             seedVehicles()
             seedTrips()
