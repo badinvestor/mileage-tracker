@@ -137,8 +137,7 @@ fun Application.tripRoutes() {
                     if (created == null) {
                         call.respond(HttpStatusCode.NotFound, ErrorResponse("Vehicle not found"))
                     } else {
-                        // BUG: should be HttpStatusCode.Created (201), not OK (200)
-                        call.respond(HttpStatusCode.OK, created)
+                        call.respond(HttpStatusCode.Created, created)
                     }
                 } catch (e: Exception) {
                     call.respond(HttpStatusCode.InternalServerError, ErrorResponse(e.message ?: "Unexpected error"))
