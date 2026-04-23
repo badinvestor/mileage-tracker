@@ -1,0 +1,13 @@
+.page {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.page h1 {
+  margin-bottom: 1.25rem;
+}
+
+.error {
+  color: #dc2626;
+  font-weight: 500;
+}

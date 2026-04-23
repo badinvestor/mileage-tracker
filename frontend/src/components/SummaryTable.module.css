@@ -1,0 +1,41 @@
+.wrapper {
+  margin-top: 1rem;
+}
+
+.heading {
+  font-size: 1rem;
+  color: #475569;
+  margin-bottom: 0.75rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.table th,
+.table td {
+  padding: 0.6rem 0.75rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.table th {
+  background: #f8fafc;
+  font-weight: 600;
+  color: #475569;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.total td {
+  font-weight: 700;
+  border-top: 2px solid #94a3b8;
+  color: #1e3a5f;
+}
